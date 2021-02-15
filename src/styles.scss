@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primaryTextColor: var(--primary-text-color);
+$textFontFamily: var(--text-font-family);
+@import "./assets/css/variables.css";
+@font-face {
+  font-family: "Calistoga";
+  src: url("./assets/fonts/Calistoga-Regular.woff2") format("truetype");
+}
+
+@font-face {
+  font-family: "Grenze";
+  src: url("./assets/fonts/Grenze-Regular.woff2") format("truetype");
+}
+
+$primaryBgColor: var(--bg-primary-color);
+$primaryTextColor: var(--primary-text-color);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Grenze", serif, "Calistoga", cursive;
+  width: 100%;
+  height: 100%;
+  line-height: 1.6;
+  color: $primaryTextColor;
+  background-color: $primaryBgColor;
+
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $textFontFamily;
+  font-size: var(--f-xl);
+  line-height: 1.3;
+  @media (max-width: 480px) {
+    font-size: var(--f-lg);
+  }
+}
+
+::selection {
+  background: $primaryTextColor;
+}
+
+p {
+  font-family: $textFontFamily;
+  color: $primaryTextColor;
+  font-size: clamp(15px, 4vw, 20px);
+  line-height: 1.3;
+}
+
+main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  padding: 200px 150px;
+  @media (max-width: 1080px) {
+    padding: 200px 100px;
+  }
+  @media (max-width: 768px) {
+    padding: 150px 50px;
+  }
+  @media (max-width: 480px) {
+    padding: 125px 25px;
+  }
+  &.fillHeight {
+    padding: 0 150px;
+    @media (max-width: 1080px) {
+      padding: 0 100px;
+    }
+    @media (max-width: 768px) {
+      padding: 0 50px;
+    }
+    @media (max-width: 480px) {
+      padding: 0 25px;
+    }
+  }
+}
+
+section {
+  margin: 0 auto;
+  padding: 100px 0;
+  max-width: 1000px;
+  @media (max-width: 768px) {
+    padding: 80px 0;
+  }
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  color: $primaryTextColor;
+  line-height: 1.1;
+}
+
+.big-heading {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 80px);
+}
+.medium-heading {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 60px);
+}
+
+.subtitle {
+  color: var(--green);
+  margin: 0 0 20px 0;
+  font-size: var(--f-md);
+  font-weight: 400;
+  line-height: 1.5;
+  @media (max-width: 1080px) {
+    font-size: var(--f-sm);
+  }
+  @media (max-width: 768px) {
+    font-size: var(--f-xs);
+  }
+}
+
+.title-heading {
+  color: var(--heading-sec-color);
+  display: flex;
+  position: relative;
+  margin: 10px 0px 40px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, var(--f-heading));
+  white-space: nowrap;
+}
+
+@media all and (min-width: 1370px) {
+  section {
+    padding: 250px 0;
+  }
+}

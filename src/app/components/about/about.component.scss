@@ -1,0 +1,81 @@
+$headingFontFamily: var(--heading-font-family);
+$primaryTextColor: var(--primary-text-color);
+$textFontFamily: var(--text-font-family);
+$headingSecColor: var(--heading-sec-color);
+$secTextColor: var(--secondary-text-color);
+$imgFillColor: var(--img-fill-color);
+
+.title-heading {
+  display: inline-block;
+  text-align: center;
+}
+
+.user__info {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 50px;
+}
+
+.user-desc,
+.user__pic {
+  padding: 0 0 5vh 2vw;
+}
+
+.user__pic {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-pic {
+  background: url("../../../assets/images/haseeb.webp");
+  background-position: 100% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid $secTextColor;
+}
+
+.profile-pic::after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+ul.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  padding: 0px;
+  overflow: hidden;
+  color: $primaryTextColor;
+  list-style: none;
+  font-family: $textFontFamily;
+
+  li {
+    position: relative;
+    margin-bottom: 3px;
+    padding-left: 20px;
+    font-size: var(--f-md);
+  }
+}
+
+ul.skills-list li::before {
+  content: "▹";
+  margin-right: 8px;
+  color: var(--secondary-text-color);
+}
+
+.user-desc p a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+
+@media all and (max-width: 768px) {
+  .user__info {
+    flex-flow: wrap;
+  }
+
+  .user__info {
+    display: block;
+  }
+}

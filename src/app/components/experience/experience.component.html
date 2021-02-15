@@ -1,0 +1,28 @@
+<section id="experience" >
+  <div class="user-exp">
+    <h2 class="title-heading">Experience</h2>
+    <div class="tab-wrap">
+      <ng-container *ngFor="let item of (jobs$ | async); let i = index">
+        <input
+          [checked]="item?.status"
+          type="radio"
+          id="tab{{ i + 1 }}"
+          name="tabGroup1"
+          class="tab"
+          checked
+        />
+        <label for="tab{{ i + 1 }}">{{
+          item?.company
+        }}</label>
+      </ng-container>
+  
+      <ng-container *ngFor="let item of (jobs$ | async); let i = index">
+        <div class="tab__content">
+          <span class="job-title">{{item.title}} </span>
+          <span class="company-name">@ {{item.company}}</span>
+          <p [innerHTML]="item?.description | mdToHtml"></p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

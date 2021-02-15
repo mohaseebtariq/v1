@@ -1,0 +1,81 @@
+$primaryBgColor: var(--bg-primary-color);
+$primaryTextColor: var(--primary-text-color);
+$secTextColor: var(--secondary-text-color);
+$fontFamily: var(--text-font-family);
+
+.nav {
+  height: 80px;
+  background-color: $primaryBgColor;
+  display: flex;
+  font-family: $fontFamily;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: var(--heading-sec-color);
+}
+
+ul.nav__list {
+  display: flex;
+  flex-grow: 1;
+  gap: 4vw;
+}
+
+.nav__list {
+  list-style: none;
+}
+
+.nav__list li {
+  margin-top: 34px;
+  font-size: var(--f-md)
+}
+
+.nav__list a {
+  padding: 3px;
+}
+
+.nav li a::after {
+  content: "";
+  display: block;
+  transition: 0.3s;
+  width: 0;
+}
+
+.nav li a:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: $secTextColor;
+  height: 2px;
+  margin-left: 2px;
+}
+
+.nav__list li:last-child {
+  margin-right: 5vw;
+}
+
+.nav__list li:nth-of-type(1) {
+  margin-left: auto;
+}
+
+.nav-logo {
+  margin: 27px 4.5vw;
+}
+
+@media all and (max-width: 480px) {
+  .nav__list li {
+    font-size: var(--f-md);
+  }  
+}
+
+@media all and (max-width: 400px) {
+  .nav__list li {
+    font-size: var(--f-sm);
+  }  
+}
+

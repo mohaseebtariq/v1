@@ -1,0 +1,45 @@
+<section id="projects">
+    <h2 class="title-heading">Projects I have built</h2>
+    <div class="grid-row">
+      <div class="grid-item" *ngFor="let item of (projects$ | async)">
+        <div class="grid-item-wrapper">
+          <div class="project-top">
+            <div class="project-grid-inner">
+              <div class="folder">
+                <i-feather class="icon" name="Folder"></i-feather>
+              </div>
+              <div class="link-box">
+                <div *ngIf="item?.liveUrl" class="links">
+                  <a href="{{item?.liveUrl}}" aria-label="Live Url">
+                    <i-feather class="icon" name="external-link"></i-feather>
+                  </a>
+                </div>
+                <div *ngIf="item?.gitUrl" class="links">
+                  <a href="{{item?.gitUrl}}" aria-label="GitHub Link">
+                    <i-feather class="icon" name="Github"></i-feather>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-title">
+              <h3>{{item.title}}</h3>
+            </div>
+
+            <div class="project-desc">
+              <p>{{item.desc}}</p>
+            </div>
+
+            <footer class="p-footer">
+              <div class="project-tech-list">
+                <ul class="tech-list">
+                  <li *ngFor="let tech of item?.tech">{{tech}}</li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</section>

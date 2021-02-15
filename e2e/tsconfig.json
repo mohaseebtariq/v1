@@ -1,0 +1,17 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/e2e",
+    "module": "commonjs",
+    "target": "es2018",
+    "types": [
+      "jasmine",
+<<<<<<< HEAD
+      "jasminewd2",
+=======
+>>>>>>> 90451c1e4c839a323003adfde1de10aa66b0b525
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+$secTextColor: var(--secondary-text-color);
+
+.contact {
+    max-width: 600px;
+    margin: 0px auto 100px;
+    text-align: center;
+}
+
+h2.contact-title {
+    color: var(--heading-sec-color);
+    font-size: clamp(40px, 5vw, 60px);
+}
+
+.email-link {
+    color: var(--primary-text-color);
+    background-color: transparent;
+    padding: 1rem 1.75rem;
+    font-size: var(--f-md);
+    border-radius: 4px;
+    font-family: var(--text-font-family);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid $secTextColor;
+    background: transparent;
+    padding: 0.7rem;
+    color: $secTextColor;
+    a {
+      text-align: center;
+    }
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+.btn-email {
+    margin-top: 50px;
+}

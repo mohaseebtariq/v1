@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    min-height: 70px;
+    padding: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+
+    .credits p {
+        color: var(--heading-sec-color);
+        font-size: var(--f-xxs);
+        line-height: 1;  
+        letter-spacing: 0.8px;
+    }
+
+    .credits a {
+        text-decoration: none;
+    }
+}
+
+.social-links {
+    display: flex; 
+    list-style: none;
+    margin-bottom: 10px;
+    li {
+        padding-right: 15px;
+        a {
+            color: var(--heading-sec-color);
+        }
+    }
+}
+
+@media all and (min-width: 900px) {
+    .social-links {
+        display: none;
+    }
+}

@@ -1,0 +1,23 @@
+<section id="about" class="about-user">
+  <h2 class="title-heading">My Introduction</h2>
+  <div class="user__info">
+    <div class="user__pic">
+      <div id="pic-boundary">
+        <div class="profile-pic"></div>
+      </div>
+    </div>
+    <div class="user-desc">
+        <div *ngFor="let item of about$ | async">
+          <div [innerHTML]="item?.desc | mdToHtml"></div>
+        </div>
+        <br />
+        <p>Here are a few technologies I've been working with recently:</p>
+        <br />
+        <ul class="skills-list" *ngFor="let item of (about$ | async); let i = index">
+          <li *ngFor="let listItem of item.skills">
+            {{listItem}}
+          </li>
+        </ul>
+    </div>
+  </div>
+</section>

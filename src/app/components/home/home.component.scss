@@ -1,0 +1,71 @@
+$headingFontFamily: var(--heading-font-family);
+$primaryTextColor: var(--primary-text-color);
+$textFontFamily: var(--text-font-family);
+$headingSecColor: var(--heading-sec-color);
+$secTextColor: var(--secondary-text-color);
+
+
+.heading h1 {
+  font-family: $headingFontFamily;
+  font-size: clamp(33px, 5vw, 60px);
+}
+
+
+p.sec__desc,
+p.sec__heading {
+  margin: 0px 0px 30px 4px;
+}
+
+p.sec__desc {
+  max-width: 600px;
+  margin: 20px 0px 0px;
+}
+
+.sec__heading,
+.sec__desc,
+.name__heading {
+  color: $primaryTextColor;
+}
+
+.role__heading {
+  color: $headingSecColor;
+}
+
+.name__heading,
+.role__heading {
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+.btn-container {
+  margin: 2rem 0;
+
+  .btn {
+    color: var(--primary-text-color);
+    background-color: transparent;
+    padding: 1rem 1.75rem;
+    font-size: var(--f-md);
+    border-radius: 4px;
+    font-family: var(--text-font-family);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid $secTextColor;
+    background: transparent;
+    padding: 0.7rem;
+    color: $secTextColor;
+    a {
+      text-align: center;
+    }
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .main-section {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+}

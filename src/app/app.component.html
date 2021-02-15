@@ -1,0 +1,5 @@
+<ng-container *ngIf="!showLoader">
+    <app-navbar></app-navbar>
+<router-outlet></router-outlet>
+</ng-container>
+<app-loader *ngIf="showLoader"></app-loader>
