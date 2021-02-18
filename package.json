@@ -6,6 +6,7 @@
     "config": "ts-node ./src/assets/scripts/setEnv.ts",
     "start": "npm run config -- --environment=dev && ng serve",
     "build": "npm run config -- --environment=prod && ng build --prod",
+    "server": "npm run config -- --environment=prod && ng serve --port $PORT",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
