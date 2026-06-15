@@ -71,10 +71,6 @@
    Go to the /dist directory and run command `ng serve`
    ```
 
-## Deployment
-
-Production deploys run on **Netlify** from the `develop` branch (`dist/portfolio/browser`). Content is managed in **Contentful**; publishing content can trigger a rebuild via the CMS webhook.
-
 ## 🎨 Color Reference
 
 | Token | Hex | Usage |
