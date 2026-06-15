@@ -11,11 +11,12 @@
     margin-bottom: 12px;
     text-align: center;
 
-    .credits p {
+    .credits .credits-text {
         color: var(--heading-sec-color);
         font-size: var(--f-xxs);
-        line-height: 1;  
+        line-height: 1;
         letter-spacing: 0.8px;
+        display: block;
     }
 
     .credits a {

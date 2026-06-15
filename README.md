@@ -77,9 +77,12 @@ Production deploys run on **Netlify** from the `develop` branch (`dist/portfolio
 
 ## 🎨 Color Reference
 
-| Color        | Hex |
-| ------------ | --- |
-| Eden         | ![#155B4A](https://img.shields.io/badge/%23155B4A-155B4A?style=flat-square) |
-| Acapulco     | ![#76B9A5](https://img.shields.io/badge/%2376B9A5-76B9A5?style=flat-square) |
-| Spring Green | ![#00FFB3](https://img.shields.io/badge/%2300FFB3-00FFB3?style=flat-square) |
-| Concrete     | ![#F3F3F3](https://img.shields.io/badge/%23F3F3F3-F3F3F3?style=flat-square&color=555555) |
+| Token | Hex | Usage |
+| ----- | --- | ----- |
+| Background Primary | ![#122F5A](https://img.shields.io/badge/%23122F5A-122F5A?style=flat-square) | Page background (`--bg-primary-color`) |
+| Card Background | ![#143565](https://img.shields.io/badge/%23143565-143565?style=flat-square) | Cards and panels (`--card-background-color`) |
+| Primary Text | ![#D4F1F4](https://img.shields.io/badge/%23D4F1F4-D4F1F4?style=flat-square&color=555555) | Body text (`--primary-text-color`) |
+| Heading Secondary | ![#E2E8F0](https://img.shields.io/badge/%23E2E8F0-E2E8F0?style=flat-square&color=555555) | Headings and labels (`--heading-sec-color`) |
+| Accent | ![#00FFB3](https://img.shields.io/badge/%2300FFB3-00FFB3?style=flat-square) | Links and highlights (`--secondary-text-color`) |
+| Muted Text | ![#A8B8C8](https://img.shields.io/badge/%23A8B8C8-A8B8C8?style=flat-square&color=555555) | Secondary copy (`--muted-text-color`) |
+| Image Fill | ![#F3F3F3](https://img.shields.io/badge/%23F3F3F3-F3F3F3?style=flat-square&color=555555) | Image placeholders (`--img-fill-color`) |

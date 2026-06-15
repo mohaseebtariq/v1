@@ -1,28 +1,72 @@
-<section id="experience" >
+<app-section
+  sectionId="experience"
+  heading="Experience"
+  [ariaBusy]="jobsResource.isLoading()"
+>
   <div class="user-exp">
-    <h2 class="title-heading">Experience</h2>
-    <div class="tab-wrap">
-      <ng-container *ngFor="let item of (jobs$ | async); let i = index">
-        <input
-          [checked]="item?.status"
-          type="radio"
-          id="tab{{ i + 1 }}"
-          name="tabGroup1"
-          class="tab"
-          checked
-        />
-        <label for="tab{{ i + 1 }}">{{
-          item?.company
-        }}</label>
-      </ng-container>
-  
-      <ng-container *ngFor="let item of (jobs$ | async); let i = index">
-        <div class="tab__content">
-          <span class="job-title">{{item.title}} </span>
-          <span class="company-name">@ {{item.company}}</span>
-          <p [innerHTML]="item?.description | mdToHtml"></p>
+    @if (jobsResource.hasValue()) {
+      @let jobs = jobsResource.value();
+      <div class="experience experience--loaded">
+        <div class="experience__tab-nav">
+          <div
+            class="experience__tabs-viewport"
+            [class.experience__tabs-viewport--scrollable]="isScrollable()"
+            [class.experience__tabs-viewport--scroll-left]="canScrollLeft()"
+            [class.experience__tabs-viewport--scroll-right]="canScrollRight()"
+          >
+            <div
+              #tabList
+              class="experience__tabs"
+              role="tablist"
+              aria-label="Work experience"
+            >
+              @for (item of jobs; track item.company; let i = $index) {
+                <button
+                  type="button"
+                  class="experience__tab"
+                  role="tab"
+                  [id]="'experience-tab-' + i"
+                  [attr.aria-selected]="activeTabIndex() === i"
+                  [attr.aria-controls]="'experience-panel-' + i"
+                  [attr.tabindex]="activeTabIndex() === i ? 0 : -1"
+                  (click)="selectTab(i)"
+                  (keydown)="onTabKeydown($event, i, jobs.length)"
+                >
+                  {{ item?.company }}
+                </button>
+              }
+            </div>
+          </div>
+          @if (isScrollable()) {
+            <div class="experience__scroll-bar" aria-hidden="true">
+              <div class="experience__scroll-track">
+                <div
+                  class="experience__scroll-thumb"
+                  [style.width.%]="scrollThumbWidth()"
+                  [style.--thumb-offset.px]="scrollThumbOffset()"
+                ></div>
+              </div>
+            </div>
+          }
         </div>
-      </ng-container>
-    </div>
+        @for (item of jobs; track item.company; let i = $index) {
+          <div
+            class="experience__panel"
+            role="tabpanel"
+            [id]="'experience-panel-' + i"
+            [attr.aria-labelledby]="'experience-tab-' + i"
+            [hidden]="activeTabIndex() !== i"
+          >
+            <p class="experience__role">
+              <span class="job-title">{{ item.title }}</span>
+              <span class="company-name">&#64; {{ item.company }}</span>
+            </p>
+            <div class="experience__desc" [innerHTML]="item.description | mdToHtml"></div>
+          </div>
+        }
+      </div>
+    } @else if (jobsResource.isLoading()) {
+      <app-content-skeleton variant="experience" label="Loading experience" />
+    }
   </div>
-</section>
+</app-section>

@@ -1,81 +1,108 @@
-$headingFontFamily: var(--heading-font-family);
-$primaryTextColor: var(--primary-text-color);
 $textFontFamily: var(--text-font-family);
-$headingSecColor: var(--heading-sec-color);
+$monoFontFamily: var(--mono-font-family);
+$mutedTextColor: var(--muted-text-color);
 $secTextColor: var(--secondary-text-color);
-$imgFillColor: var(--img-fill-color);
-
-.title-heading {
-  display: inline-block;
-  text-align: center;
-}
 
 .user__info {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 50px;
-}
-
-.user-desc,
-.user__pic {
-  padding: 0 0 5vh 2vw;
+  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
 }
 
 .user__pic {
   width: 100%;
-  height: 100%;
+  max-width: 280px;
+  justify-self: center;
 }
 
-.profile-pic {
-  background: url("../../../assets/images/haseeb.webp");
-  background-position: 100% 40%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: auto;
-  border-radius: 50%;
-  border: 2px solid $secTextColor;
+.user-desc {
+  padding: 0;
+  font-size: var(--f-md);
+  line-height: 1.65;
+  color: $mutedTextColor;
+
+  p {
+    margin: 0 0 1.25rem;
+    font-size: var(--f-md);
+    line-height: 1.65;
+    color: $mutedTextColor;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul:not(.skills-list) {
+    margin: 0 0 1.25rem;
+    padding-left: 1.25rem;
+    font-size: var(--f-md);
+    color: $mutedTextColor;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
 }
 
-.profile-pic::after {
-  content: "";
-  padding-bottom: 100%;
-  display: block;
+.skills-intro {
+  margin: 1.75rem 0 1rem;
+  font-size: var(--f-md);
+  color: $mutedTextColor;
 }
 
 ul.skills-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
-  padding: 0px;
-  overflow: hidden;
-  color: $primaryTextColor;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 0.35rem 1rem;
+  padding: 0;
+  margin: 0;
   list-style: none;
-  font-family: $textFontFamily;
+  font-family: $monoFontFamily;
+  font-size: var(--f-sm);
 
   li {
     position: relative;
-    margin-bottom: 3px;
-    padding-left: 20px;
-    font-size: var(--f-md);
+    margin-bottom: 0;
+    padding-left: 1.1rem;
+    color: $mutedTextColor;
   }
 }
 
 ul.skills-list li::before {
   content: "▹";
-  margin-right: 8px;
-  color: var(--secondary-text-color);
+  position: absolute;
+  left: 0;
+  color: $secTextColor;
 }
 
-.user-desc p a {
+.user-desc p a,
+.user-desc a {
   text-decoration: none;
-  color: var(--secondary-text-color);
+  color: $secTextColor;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.user-desc--loaded {
+  animation: content-fade-in 0.35s ease;
 }
 
 @media all and (max-width: 768px) {
   .user__info {
-    flex-flow: wrap;
+    display: block;
   }
 
-  .user__info {
-    display: block;
+  .user__pic {
+    margin: 0 auto 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-desc--loaded {
+    animation: none;
   }
 }

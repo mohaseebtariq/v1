@@ -1,13 +1,12 @@
 $primaryBgColor: var(--bg-primary-color);
-$primaryTextColor: var(--primary-text-color);
 $secTextColor: var(--secondary-text-color);
-$fontFamily: var(--text-font-family);
+$monoFontFamily: var(--mono-font-family);
 
 .nav {
   height: 80px;
   background-color: $primaryBgColor;
   display: flex;
-  font-family: $fontFamily;
+  font-family: $monoFontFamily;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +22,8 @@ $fontFamily: var(--text-font-family);
 ul.nav__list {
   display: flex;
   flex-grow: 1;
-  gap: 4vw;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+  font-weight: 400;
 }
 
 .nav__list {
@@ -32,7 +32,7 @@ ul.nav__list {
 
 .nav__list li {
   margin-top: 34px;
-  font-size: var(--f-md)
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .nav__list a {
@@ -68,14 +68,15 @@ ul.nav__list {
 }
 
 @media all and (max-width: 480px) {
-  .nav__list li {
-    font-size: var(--f-md);
-  }  
-}
+  ul.nav__list {
+    gap: 0.65rem;
+  }
 
-@media all and (max-width: 400px) {
   .nav__list li {
-    font-size: var(--f-sm);
-  }  
-}
+    font-size: 13px;
+  }
 
+  .nav-logo {
+    margin: 30px 3vw;
+  }
+}

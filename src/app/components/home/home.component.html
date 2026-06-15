@@ -1,15 +1,35 @@
-<section class="main-section">
+<section
+  class="main-section"
+  [attr.aria-busy]="headlineResource.isLoading() || resumeResource.isLoading()"
+>
   <p class="sec__heading">Hi, my name is</p>
   <div class="heading">
-    <h1 class="name__heading">Mohammed Haseeb Tariq.</h1>
-    <h1 class="role__heading">I am a Full-Stack Web Developer.</h1>
+    <h1 class="name__heading">{{ siteName }}.</h1>
+    <p class="role__heading">{{ jobTitle }}.</p>
   </div>
-  <p class="sec__desc" >
-    Based in Rawalpindi, Pakistan. I try to keep up with the latest trends
-    Passionate about learning new technologies, bringing ideas to life, 
-    and working to build efficient and robust applications suited to the user’s needs. 
-  </p>
+  @if (headlineResource.hasValue()) {
+    @let headlines = headlineResource.value();
+    @if (headlines[0]?.headline) {
+      <p class="sec__desc sec__desc--loaded">{{ headlines[0].headline }}</p>
+    }
+  } @else if (headlineResource.isLoading()) {
+    <app-content-skeleton variant="text" label="Loading headline" />
+  }
   <div class="btn-container">
-    <a class="btn" href="/assets/resume.pdf">Resume</a>
+    @if (resumeResource.hasValue()) {
+      @let link = resumeLink(resumeResource.value());
+      <a
+        class="btn btn-outline"
+        [href]="link.url"
+        [attr.download]="link.fileName"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download resume (PDF)"
+      >
+        Resume
+      </a>
+    } @else if (resumeResource.isLoading()) {
+      <app-content-skeleton variant="text" label="Loading resume" />
+    }
   </div>
 </section>

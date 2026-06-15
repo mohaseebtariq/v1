@@ -1,29 +1,33 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
-import anime from 'animejs/lib/anime.es';
-
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { rxResource } from '@angular/core/rxjs-interop';
+import { ContentfulService } from '../../shared/services/contentful.service';
+import { ContentSkeletonComponent } from '../../shared/components/content-skeleton/content-skeleton.component';
+import { JOB_TITLE, SITE_NAME } from '../../shared/constants/site.constants';
+import {
+  resolveResumeLink,
+} from '../../shared/utils/contentful-asset.util';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [
-    // animation('fadeIn', 0.5)
-  ]
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ContentSkeletonComponent],
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent {
+  private readonly contentful = inject(ContentfulService);
 
-  constructor(private router: Router) {}
+  readonly headlineResource = rxResource({
+    stream: () => this.contentful.getHeadline(),
+  });
 
-  ngAfterViewInit(): void {
-    anime({
-      targets: '.main-section',
-      translateY: [100, 0],
-      duration: 1000,
-      easing: 'easeOutSine',
-    });
-  }
+  readonly resumeResource = rxResource({
+    stream: () => this.contentful.getResume(),
+  });
 
-  ngOnInit(): void {}
+  readonly resumeLink = resolveResumeLink;
 
+  readonly jobTitle = JOB_TITLE;
+
+  readonly siteName = SITE_NAME;
 }

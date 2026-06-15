@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist/portfolio/browser"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+[build.environment]
+  NODE_VERSION = "22.22.3"
+  # Required in Netlify UI (Site settings → Environment variables).
+  # Scope to Production, Deploy previews, and Branch deploys:
+  #   spaceId = <Contentful space ID>
+  #   token   = <Contentful delivery API token>
+  #
+  # CMS → deploy automation (one-time): npm run setup:cms-deploy
+  # Creates a Netlify build hook + Contentful publish webhook (needs
+  # contentfulManagementToken in .env). For build status in Contentful UI,
+  # also install the Netlify app from the Contentful marketplace.

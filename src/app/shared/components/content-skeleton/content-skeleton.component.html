@@ -1,0 +1,68 @@
+<div
+  class="content-skeleton"
+  role="status"
+  aria-live="polite"
+  [attr.aria-label]="label()"
+>
+  <span class="sr-only">{{ label() }}</span>
+
+  @switch (variant()) {
+    @case ('text') {
+      <div class="skeleton-text" aria-hidden="true">
+        <span class="skeleton-line"></span>
+        <span class="skeleton-line"></span>
+        <span class="skeleton-line skeleton-line--short"></span>
+      </div>
+    }
+    @case ('about') {
+      <div class="skeleton-about" aria-hidden="true">
+        <span class="skeleton-line"></span>
+        <span class="skeleton-line"></span>
+        <span class="skeleton-line"></span>
+        <span class="skeleton-line skeleton-line--medium"></span>
+        <span class="skeleton-line skeleton-line--short"></span>
+        <div class="skeleton-skills">
+          @for (item of [1, 2, 3, 4, 5, 6]; track item) {
+            <span class="skeleton-skill"></span>
+          }
+        </div>
+      </div>
+    }
+    @case ('experience') {
+      <div class="skeleton-experience" aria-hidden="true">
+        <div class="skeleton-tabs">
+          @for (item of [1, 2, 3, 4]; track item) {
+            <span class="skeleton-tab"></span>
+          }
+        </div>
+        <div class="skeleton-experience-body">
+          <span class="skeleton-line skeleton-line--title"></span>
+          <span class="skeleton-line"></span>
+          <span class="skeleton-line"></span>
+          <span class="skeleton-line skeleton-line--medium"></span>
+          <span class="skeleton-line skeleton-line--short"></span>
+        </div>
+      </div>
+    }
+    @case ('projects') {
+      <div class="skeleton-projects" aria-hidden="true">
+        @for (card of [1, 2, 3]; track card) {
+          <div class="skeleton-card">
+            <div class="skeleton-card__header">
+              <span class="skeleton-card__icon"></span>
+              <span class="skeleton-card__icon skeleton-card__icon--small"></span>
+            </div>
+            <span class="skeleton-line skeleton-line--title"></span>
+            <span class="skeleton-line"></span>
+            <span class="skeleton-line skeleton-line--medium"></span>
+            <div class="skeleton-card__tags">
+              <span class="skeleton-tag"></span>
+              <span class="skeleton-tag"></span>
+              <span class="skeleton-tag"></span>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  }
+</div>

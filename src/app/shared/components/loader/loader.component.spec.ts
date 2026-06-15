@@ -8,7 +8,7 @@ describe('LoaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ]
+      imports: [ LoaderComponent ]
     })
     .compileComponents();
   });
@@ -23,3 +23,4 @@ describe('LoaderComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
 import { ProjectsComponent } from './projects.component';
+import { ContentfulService } from '../../shared/services/contentful.service';
 
 describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
@@ -8,12 +9,15 @@ describe('ProjectsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectsComponent ]
-    })
-    .compileComponents();
-  });
+      imports: [ProjectsComponent],
+      providers: [
+        {
+          provide: ContentfulService,
+          useValue: { getProjects: () => of([]) },
+        },
+      ],
+    }).compileComponents();
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ProjectsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

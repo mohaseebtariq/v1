@@ -1,71 +1,83 @@
 $headingFontFamily: var(--heading-font-family);
+$monoFontFamily: var(--mono-font-family);
 $primaryTextColor: var(--primary-text-color);
-$textFontFamily: var(--text-font-family);
+$mutedTextColor: var(--muted-text-color);
 $headingSecColor: var(--heading-sec-color);
 $secTextColor: var(--secondary-text-color);
 
-
-.heading h1 {
-  font-family: $headingFontFamily;
-  font-size: clamp(33px, 5vw, 60px);
+.heading {
+  margin-bottom: 0.5rem;
 }
 
+.name__heading {
+  font-family: $headingFontFamily;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: $primaryTextColor;
+  margin: 0;
+}
 
-p.sec__desc,
+.role__heading {
+  font-family: $headingFontFamily;
+  font-size: clamp(26px, 3.8vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: $headingSecColor;
+  margin: 0.5rem 0 0;
+}
+
 p.sec__heading {
-  margin: 0px 0px 30px 4px;
+  margin: 0 0 1.25rem;
+}
+
+.sec__heading {
+  font-family: $monoFontFamily;
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: 400;
+  color: $secTextColor;
 }
 
 p.sec__desc {
-  max-width: 600px;
-  margin: 20px 0px 0px;
-}
-
-.sec__heading,
-.sec__desc,
-.name__heading {
-  color: $primaryTextColor;
-}
-
-.role__heading {
-  color: $headingSecColor;
-}
-
-.name__heading,
-.role__heading {
-  margin-top: 10px;
-  line-height: 1.2;
+  max-width: 540px;
+  margin: 1.25rem 0 0;
+  font-family: $headingFontFamily;
+  font-size: clamp(15px, 1.6vw, 16px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: $mutedTextColor;
 }
 
 .btn-container {
-  margin: 2rem 0;
-
-  .btn {
-    color: var(--primary-text-color);
-    background-color: transparent;
-    padding: 1rem 1.75rem;
-    font-size: var(--f-md);
-    border-radius: 4px;
-    font-family: var(--text-font-family);
-    line-height: 1;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid $secTextColor;
-    background: transparent;
-    padding: 0.7rem;
-    color: $secTextColor;
-    a {
-      text-align: center;
-    }
-    :hover {
-      cursor: pointer;
-    }
-  }
+  margin: 2rem 0 0;
+  flex-shrink: 0;
 }
 
-@media all and (max-width: 480px) {
-  .main-section {
-    margin-top: 8vh;
-    margin-bottom: 5vh;
+@media (max-width: 768px) {
+  .name__heading {
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 1.1;
+  }
+
+  .role__heading {
+    font-size: clamp(24px, 7vw, 34px);
+    margin-top: 0.65rem;
+  }
+
+  p.sec__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  p.sec__desc {
+    margin-top: 1.5rem;
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .btn-container {
+    margin-top: 2.25rem;
   }
 }

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
 import { ExperienceComponent } from './experience.component';
+import { ContentfulService } from '../../shared/services/contentful.service';
 
 describe('ExperienceComponent', () => {
   let component: ExperienceComponent;
@@ -8,12 +9,15 @@ describe('ExperienceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExperienceComponent ]
-    })
-    .compileComponents();
-  });
+      imports: [ExperienceComponent],
+      providers: [
+        {
+          provide: ContentfulService,
+          useValue: { getJobs: () => of([]) },
+        },
+      ],
+    }).compileComponents();
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ExperienceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

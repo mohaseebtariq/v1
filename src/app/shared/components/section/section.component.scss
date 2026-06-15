@@ -1,0 +1,18 @@
+.page-section {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.page-section__heading {
+  width: 100%;
+  margin: 0 0 2.5rem;
+  text-align: center;
+  font-family: var(--mono-font-family);
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 500;
+  color: var(--heading-sec-color);
+}
+
+.page-section__content {
+  width: 100%;
+}

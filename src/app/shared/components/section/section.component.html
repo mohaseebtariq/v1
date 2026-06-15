@@ -1,0 +1,13 @@
+<section
+  [id]="sectionId()"
+  [class]="sectionClass() ? 'page-section ' + sectionClass() : 'page-section'"
+  [attr.aria-busy]="ariaBusy()"
+  [attr.aria-labelledby]="resolvedHeadingId()"
+>
+  <h2 class="page-section__heading" [id]="resolvedHeadingId()">
+    {{ heading() }}
+  </h2>
+  <div class="page-section__content">
+    <ng-content />
+  </div>
+</section>

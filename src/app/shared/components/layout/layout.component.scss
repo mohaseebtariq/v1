@@ -1,5 +1,5 @@
 .comp-container {
-  padding: 2.5rem clamp(50px, 10vw, 15vw) 0 clamp(50px, 10vw, 15vw);
+  padding: 2.5rem 150px 0 150px;
 }
 
 .comp {
@@ -20,7 +20,6 @@
 ul.social-links {
   display: flex;
   flex-direction: column;
-  -moz-box-align: center;
   align-items: center;
   margin: 0px;
   padding: 0px;
@@ -44,16 +43,39 @@ ul.social-links {
   background-color: var(--heading-sec-color);
 }
 
-@media all and (max-width: 768px) {
-  
+.defer-placeholder {
+  min-height: 280px;
+  padding: 1rem 0;
+}
+
+@media (max-width: 1080px) {
+  .comp-container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .icons-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
   .comp {
     padding: 0;
   }
 
+  .comp-container {
+    padding-top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
-@media all and (max-width: 900px) {
-  .icons-container {
-    display: none;
+@media (max-width: 480px) {
+  .comp-container {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }

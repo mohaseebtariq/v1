@@ -1,0 +1,18 @@
+$secTextColor: var(--secondary-text-color);
+
+.profile-pic {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 100% 40%;
+  border: 2px solid $secTextColor;
+}
+
+#pic-boundary {
+  text-align: center;
+}
+
+.profile-pic::after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}

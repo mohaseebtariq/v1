@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
 import { LayoutComponent } from './layout.component';
+import { ContentfulService } from '../../services/contentful.service';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -8,12 +9,21 @@ describe('LayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LayoutComponent ]
-    })
-    .compileComponents();
-  });
+      imports: [LayoutComponent],
+      providers: [
+        {
+          provide: ContentfulService,
+          useValue: {
+            getHeadline: () => of([]),
+            getAbout: () => of([]),
+            getImage: () => of([]),
+            getJobs: () => of([]),
+            getProjects: () => of([]),
+          },
+        },
+      ],
+    }).compileComponents();
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
