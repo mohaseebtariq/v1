@@ -17,7 +17,7 @@
   <a href="https://www.linkedin.com/in/mohaseebtariq" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </p>
 
-![demo](https://lh3.googleusercontent.com/BiGiGk7_Gb3cmzE7O9CbJlCu6rElcZbKtBt5sNt4cXEFHxTPHoEP7tWpb_Hr6Y3Et9m-Bhc9PCzrFcV3swOGSYaNNMY9Oqe87Rdx_gwS8pDurm-xfJFsLouuix0SFMYPc9Fso0iLCw=w2400)
+![demo](https://lh3.googleusercontent.com/pw/AP1GczO-IcLGu75xqot_nZuO88OyOB06r1RLOl-nySLc1127MKI5a88bfAechHGGmfW-NA1yjTTuB8oXNifdHf3zJOsYPbfJSwwmbjybNOJi14VKZ6Fec9sN=w2400)
 
 > **Note:** This private repository is used for active development and deployment. The public source for version one is [github.com/mohaseebtariq/v1](https://github.com/mohaseebtariq/v1).
 
