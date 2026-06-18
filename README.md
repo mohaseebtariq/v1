@@ -1,25 +1,12 @@
 <div align="center">
-  <img alt="Logo" src="https://lh3.googleusercontent.com/pw/AP1GczP3mTQdmONXuaaFQIAPBPSqMqEVPCfOvDhbFoeLPzecCA4he7MEc3W2S0kQSVD6Bv7OpdbQhTD9nX6UKgCYSGd0NezaT1UAiCl3eMK2TYFrd9H-Alyh=w2400" width="100" />
+  <img alt="Logo" src="https://lh3.googleusercontent.com/tT0mylPVy8KxS8ZsctpzLPOli6sdTvQch2X1ZLPAfIzw2QNhCOnXyvsGE3_QNONAnglVT7B2pVajPa9xX5AC1TEUo4LFSIosKRjFTOnESz6Zbo976PU6r-vTm0uQyIPvpjk3fQE-sg=s131-p-k" width="100" />
 </div>
 <br>
 <p align="center">
-  Personal portfolio of <strong>Haseeb Tariq</strong> —
-  <a href="https://www.haseebtariq.dev/" target="_blank" rel="noopener noreferrer">haseebtariq.dev</a>
-  built with <a href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a>
-  and hosted with <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>
+  My Personal Portfolio <a href="https://www.haseebtariq.dev/" target="_blank" rel="noopener noreferrer">haseebtariq.dev</a> built with <a href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a> and hosted with <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>
 </p>
 
-<p align="center">
-  <a href="https://www.haseebtariq.dev/" target="_blank" rel="noopener noreferrer">Live site</a>
-  ·
-  <a href="https://github.com/mohaseebtariq/v1" target="_blank" rel="noopener noreferrer">Public repo (v1)</a>
-  ·
-  <a href="https://www.linkedin.com/in/mohaseebtariq" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-</p>
-
-![demo](https://lh3.googleusercontent.com/pw/AP1GczO-IcLGu75xqot_nZuO88OyOB06r1RLOl-nySLc1127MKI5a88bfAechHGGmfW-NA1yjTTuB8oXNifdHf3zJOsYPbfJSwwmbjybNOJi14VKZ6Fec9sN=w2400)
-
-> **Note:** This private repository is used for active development and deployment. The public source for version one is [github.com/mohaseebtariq/v1](https://github.com/mohaseebtariq/v1).
+![demo](https://lh3.googleusercontent.com/pw/AP1GczPvkkAqekb7GTpKUsLimoIfz2HhhyvBm_8rT2WFQukPSof7JQN16KR_Msg-TshRyJjvHihH2gUbhk0u4IIYjkl9j4sqmr_C-EpYsvnvV83FF9q2MvCk=w2400)
 
 ## 🛠 Installation & Set Up
 
@@ -70,6 +57,10 @@
    ```sh
    Go to the /dist directory and run command `ng serve`
    ```
+
+## Deployment
+
+Production deploys run on **Netlify** from the `develop` branch (`dist/portfolio/browser`). Content is managed in **Contentful**; publishing content can trigger a rebuild via the CMS webhook.
 
 ## 🎨 Color Reference
 
