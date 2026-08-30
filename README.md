@@ -73,3 +73,8 @@ Production deploys run on **Netlify** from the `develop` branch (`dist/portfolio
 | Accent | ![#00FFB3](https://img.shields.io/badge/%2300FFB3-00FFB3?style=flat-square) | Links and highlights (`--secondary-text-color`) |
 | Muted Text | ![#A8B8C8](https://img.shields.io/badge/%23A8B8C8-A8B8C8?style=flat-square&color=555555) | Secondary copy (`--muted-text-color`) |
 | Image Fill | ![#F3F3F3](https://img.shields.io/badge/%23F3F3F3-F3F3F3?style=flat-square&color=555555) | Image placeholders (`--img-fill-color`) |
+
+## 🙏 Credits & Attribution
+If you decide to use this project or parts of it, please give credit by linking back to this repository or [haseebtariq.dev](https://www.haseebtariq.dev/).
+
+Design inspired by [v4.brittanychiang.com](https://v4.brittanychiang.com/).
